@@ -1,0 +1,865 @@
+Below is a copy-paste prompt for an AI coding model to generate a polished, interactive, single-file HTML prototype.
+
+Create a polished, interactive, enterprise-grade HTML prototype for a product called Aurora Canvas — Governed Runtime for AI-Generated Dashboards.
+
+The prototype will be shown to business users, senior managers, data teams, AI platform teams, and governance stakeholders. It must clearly demonstrate how employees can continue creating dashboards through the company’s existing secure web-based foundational AI chatbot while Aurora Canvas converts those dashboards into governed, refreshable, traceable enterprise assets.
+
+Core business problem
+
+Employees currently:
+
+1. Upload Excel or CSV files into the company-hosted AI chatbot.
+2. Ask the foundational model to create an aesthetic HTML dashboard.
+3. Iterate with the chatbot several times.
+4. Download a large self-contained HTML file, sometimes containing 5,000–10,000 lines of HTML, CSS, JavaScript, data, charts, and business logic.
+5. Share the HTML through email, Microsoft Teams, or shared drives.
+6. Recreate the dashboard when the underlying data becomes stale.
+
+This creates several problems:
+
+* Data becomes stale.
+* Dashboard files are duplicated.
+* Sharing is ungoverned.
+* Business logic is buried inside HTML and JavaScript.
+* Data lineage is unclear.
+* Users cannot easily determine which files, sheets, columns, joins, filters, or transformations produced a number.
+* The same metric may be calculated differently across dashboards.
+* There is no central ownership, versioning, certification, access control, or automatic refresh.
+* Users must repeatedly upload new data and regenerate the whole dashboard.
+
+Proposed solution
+
+Aurora Canvas does not replace the company chatbot and does not primarily generate dashboards itself.
+
+It integrates with the existing company-hosted AI chatbot.
+
+When a user selects Governed Dashboard Mode, the chatbot dynamically injects an approved dashboard-generation skill. This skill forces the foundational model to create a compliant, single-file HTML dashboard.
+
+The generated HTML must continue to:
+
+* Run independently.
+* Render inside the chatbot.
+* Contain all CSS and JavaScript.
+* Display a complete dashboard using the uploaded data.
+* Preserve the user’s chosen design and interactions.
+
+However, the HTML must also contain embedded machine-readable metadata that Aurora Canvas can extract, including:
+
+* Dashboard manifest
+* Component IDs
+* Metric definitions
+* Dataset definitions
+* Source-file details
+* Sheet names
+* Source columns
+* Data types
+* Cleaning steps
+* Transformation steps
+* Joins
+* Filters
+* Aggregations
+* Data grain
+* Refresh requirements
+* Current data snapshot
+* Platform data bindings
+* Lineage information
+
+The user should be able to click Publish to Aurora Canvas directly from the company chatbot.
+
+Aurora Canvas then validates, previews, governs, publishes, shares, versions, and refreshes the dashboard.
+
+Prototype objective
+
+Build a visually impressive clickable prototype that demonstrates the complete future workflow for a non-technical employee.
+
+The prototype must be entirely contained in one HTML file.
+
+Use only:
+
+* HTML
+* Embedded CSS
+* Embedded JavaScript
+* Embedded mock JSON data
+* SVG or CSS-generated icons and graphics
+
+Do not require:
+
+* A backend
+* A database
+* Authentication
+* External APIs
+* NPM packages
+* External JavaScript libraries
+* External fonts
+* CDN resources
+* Internet access
+
+All buttons and workflows must be simulated using client-side JavaScript.
+
+Design direction
+
+Create a premium enterprise application inspired by modern analytics, AI, data-governance, and developer-platform products.
+
+The design should feel:
+
+* Professional
+* Modern
+* Trustworthy
+* Intelligent
+* Clean
+* Executive-ready
+* Easy for non-technical users
+* Suitable for a large financial institution
+
+Use:
+
+* A spacious layout
+* Soft shadows
+* Rounded cards
+* Clear typography
+* Subtle gradients
+* Professional blue, indigo, teal, and neutral tones
+* Strong information hierarchy
+* Smooth transitions
+* Status badges
+* Progress indicators
+* Tooltips
+* Modals
+* Drawers
+* Interactive tabs
+* Toast notifications
+* Responsive behavior
+
+Avoid:
+
+* Excessively dark interfaces
+* Neon cyberpunk styling
+* Gaming aesthetics
+* Overcrowded screens
+* Highly technical terminology on primary user screens
+* Fake stock photos
+* Unnecessary decorative graphics
+
+Application structure
+
+Create a complete application shell with:
+
+Top navigation
+
+Include:
+
+* Aurora Canvas logo
+* Organization selector showing “Credit Risk — Pilot”
+* Global search
+* Notifications
+* Help
+* User avatar
+* Environment badge showing “Pilot”
+
+Left navigation
+
+Include:
+
+* Home
+* Create Dashboard
+* Import HTML
+* My Dashboards
+* Dashboard Catalogue
+* Refresh Centre
+* Data & Metrics
+* Approvals
+* Governance
+* Audit History
+* Pilot Analytics
+* Settings
+
+The navigation should be interactive and switch between prototype views without reloading the page.
+
+View 1: Home dashboard
+
+Create a welcoming homepage for a non-technical business user.
+
+Show:
+
+* “Turn AI-created dashboards into governed enterprise assets”
+* Primary button: “Create with Company AI”
+* Secondary button: “Import Existing HTML”
+* A visual four-step workflow:
+    1. Create with AI
+    2. Validate automatically
+    3. Publish securely
+    4. Refresh continuously
+
+Include summary cards:
+
+* 24 governed dashboards
+* 18 automatically refreshed
+* 96% refresh success
+* 42 certified metrics
+* 63 active users
+* 11 HTML files no longer shared manually
+
+Show a “Recent dashboards” section with cards for:
+
+* Weekly Credit Risk Overview
+* Portfolio Exposure Dashboard
+* Data Migration Status
+* Operational Controls Monitor
+* Regional Performance Overview
+
+Each card should show:
+
+* Thumbnail-style dashboard preview
+* Owner
+* Certification status
+* Last refresh
+* Data freshness
+* Number of viewers
+* Refresh schedule
+
+View 2: Create with Company AI
+
+This view should visually demonstrate integration with the existing enterprise chatbot.
+
+Create a split-screen layout.
+
+Left side: Company AI chatbot
+
+Show:
+
+* Secure enterprise chatbot header
+* “Company guardrails active”
+* “Approved model”
+* “No external data sharing”
+* Governed Dashboard Mode enabled
+
+Simulate a conversation:
+
+User message:
+
+“Create an executive credit-risk dashboard from the uploaded portfolio workbook. Show total exposure, open facilities, high-risk clients, exposure by region, six-month trend, and the top ten clients. Add filters for reporting date, region, and portfolio.”
+
+Show an uploaded file:
+
+Credit_Portfolio_July_2026.xlsx
+
+Display workbook information:
+
+* 4 sheets
+* 28 columns
+* 18,420 rows
+* Data-quality issues detected
+
+Show AI responses explaining that it:
+
+* Profiled the workbook
+* Detected duplicate rows
+* Standardized dates
+* Normalized region values
+* Removed summary rows
+* Identified relationships between sheets
+* Created dashboard components
+* Embedded a governed dashboard contract
+
+Include a simulated generation progress indicator:
+
+* Profiling data
+* Understanding metrics
+* Creating dashboard
+* Embedding lineage
+* Validating package
+* Ready
+
+Right side: Dashboard preview
+
+Render an attractive executive dashboard containing:
+
+* Total Exposure: €4.81B
+* Open Facilities: 12,482
+* High-Risk Clients: 318
+* Average Exposure: €385K
+* Exposure by Region bar chart
+* Six-Month Exposure Trend line chart
+* Risk Distribution donut chart
+* Top Clients table
+* Reporting date filter
+* Region filter
+* Portfolio filter
+* Data freshness indicator
+
+Use SVG or CSS-based charts. Do not use external chart libraries.
+
+Include buttons:
+
+* Refine with AI
+* Download HTML
+* Inspect Data Logic
+* Publish to Aurora Canvas
+
+When the user clicks “Publish to Aurora Canvas,” start the onboarding workflow.
+
+View 3: Package transfer
+
+Show a transfer animation from the company chatbot to Aurora Canvas.
+
+Display:
+
+* User identity transferred through company SSO
+* Pilot organization detected
+* Source chatbot verified
+* Approved model verified
+* HTML artifact received
+* Embedded dashboard contract detected
+* File size
+* Component count
+* Metric count
+* Dataset count
+
+Show the artifact as:
+
+credit-risk-overview-v1.html
+
+The interface should clearly explain:
+
+“This remains a single self-contained HTML dashboard. Aurora Canvas extracts its embedded governance package without changing its visual design.”
+
+Include a progress button leading to validation.
+
+View 4: Validation centre
+
+Create a highly visual validation pipeline.
+
+Show validation categories:
+
+Contract validation
+
+* Dashboard manifest found
+* Contract version supported
+* 14 components identified
+* Stable component IDs found
+* Metric bindings detected
+* Dataset bindings detected
+
+Security validation
+
+* No external network calls
+* No embedded credentials
+* No unauthorized scripts
+* No unsafe browser APIs
+* Sandboxed execution compatible
+
+Data validation
+
+* 6 metric definitions detected
+* 4 source sheets identified
+* 2 joins documented
+* 8 transformation steps recorded
+* Aggregation grain declared
+* Data snapshot reconciled
+
+Runtime validation
+
+* Dashboard rendered successfully
+* Charts loaded
+* Filters responded
+* No JavaScript errors
+* Responsive layout passed
+
+Governance validation
+
+* Owner detected
+* Organization scope confirmed
+* Data classification identified
+* Sharing boundary valid
+* Two new metrics require review
+
+Use green passed statuses, amber warnings, and clear explanations.
+
+Include one repairable warning:
+
+“Metric ‘High-Risk Clients’ uses a user-defined risk threshold that is not yet certified.”
+
+Show recommended action:
+
+“Submit metric for data-steward approval.”
+
+Include buttons:
+
+* View technical details
+* Ask AI to repair
+* Continue with warnings
+* Return to chatbot
+
+When “Ask AI to repair” is clicked, simulate:
+
+1. Sending the validation error to the company chatbot.
+2. AI correcting the package.
+3. Revalidating.
+4. Passing the corrected check.
+
+View 5: Data lineage and transformation review
+
+Create a business-friendly lineage screen.
+
+Show the path:
+
+Credit_Portfolio_July_2026.xlsx
+
+to:
+
+* Exposure sheet
+* Client sheet
+* Risk Rating sheet
+* Region Mapping sheet
+
+Then show transformation nodes:
+
+* Remove summary rows
+* Parse reporting dates
+* Normalize region values
+* Convert exposure to numeric
+* Remove duplicate facilities
+* Join exposure to client data
+* Join client data to region mapping
+* Aggregate by region
+* Calculate risk metrics
+
+Then show final dashboard components:
+
+* Total Exposure
+* Open Facilities
+* High-Risk Clients
+* Exposure by Region
+* Six-Month Trend
+* Top Clients
+
+Make the lineage diagram interactive. Clicking a metric should open a side drawer explaining:
+
+Total Exposure
+
+* Business meaning
+* Source sheet
+* Source column
+* Formula
+* Filters
+* Data grain
+* Formatting
+* Current value
+* Last calculated
+* Data owner
+* Certification status
+
+Example:
+
+Business meaning:
+“Total current exposure for facilities that are not closed.”
+
+Formula:
+“Sum of Current Exposure EUR”
+
+Filters:
+“Facility Status is not Closed”
+
+Grain:
+“One record per facility per reporting date”
+
+View 6: Source mapping to enterprise gold layer
+
+Demonstrate how the platform converts an Excel-based dashboard into an automatically refreshing dashboard.
+
+Show proposed mappings:
+
+Excel field	Proposed gold-layer field	Confidence
+Facility ID	gold.loan_exposure.facility_id	99%
+Client ID	gold.client_dimension.client_id	98%
+Current Exposure	gold.loan_exposure.exposure_amount_eur	96%
+Region	gold.client_dimension.region_name	93%
+Risk Rating	gold.risk_rating.current_rating	91%
+Reporting Date	gold.loan_exposure.reporting_date	99%
+
+Show proposed joins:
+
+* loan_exposure.client_id = client_dimension.client_id
+* client_dimension.client_id = risk_rating.client_id
+
+Include badges:
+
+* Approved join
+* Certified table
+* Data owner confirmed
+* Row-level access inherited
+
+Provide buttons:
+
+* Accept all high-confidence mappings
+* Review mapping
+* Ask data steward
+* Continue using Excel refresh
+
+View 7: Reconciliation
+
+Show a comparison between the original Excel-derived numbers and the gold-layer-derived numbers.
+
+Example:
+
+Metric	Excel result	Gold-layer result	Difference	Status
+Total Exposure	€4.81B	€4.79B	-0.42%	Review
+Open Facilities	12,482	12,479	-3	Passed
+High-Risk Clients	318	318	0	Passed
+Average Exposure	€385K	€384K	-0.26%	Passed
+
+Explain likely reasons for the exposure difference:
+
+* Different reporting-date cut-off
+* Three closed facilities in the Excel file
+* Different foreign-exchange conversion date
+
+Allow the user to choose:
+
+* Use gold-layer definition
+* Preserve current Excel definition
+* Request data-steward review
+
+View 8: Publish dashboard
+
+Create a simple publication wizard.
+
+Fields:
+
+* Dashboard title
+* Description
+* Business owner
+* Technical owner
+* Audience
+* Tags
+* Certification level
+* Refresh method
+* Refresh frequency
+* Data-retention requirement
+
+Audience options:
+
+* Only me
+* Selected pilot users
+* Entire Credit Risk pilot organization
+
+Refresh options:
+
+* Upload a new Excel file
+* Daily from gold layer
+* Weekly from gold layer
+* Refresh after upstream load
+* Manual refresh only
+
+Show a publication summary:
+
+* 6 metrics
+* 4 datasets
+* 2 approved joins
+* 1 metric pending certification
+* Organization-restricted sharing
+* Daily refresh at 07:30
+* Last validated data preserved if refresh fails
+
+Primary button:
+
+“Publish Governed Dashboard”
+
+After publishing, show a success screen with:
+
+* Stable internal link
+* Copy link
+* Open dashboard
+* Share with users
+* Subscribe to refresh notifications
+* View audit record
+
+View 9: Published dashboard runtime
+
+Show the final governed dashboard.
+
+The appearance should closely match the dashboard originally generated in the chatbot.
+
+Add an Aurora Canvas governance bar above it showing:
+
+* Validated
+* Last refreshed 34 minutes ago
+* Source data date
+* Data-quality checks passed
+* Owner
+* Version
+* Organization scope
+* Subscribe button
+* Report data issue button
+
+Include a trust panel:
+
+* Lineage completeness: 100%
+* Metric certification: 83%
+* Security checks: Passed
+* Refresh status: Healthy
+* Data freshness: Fresh
+* Overall health score: 94
+
+Include tabs:
+
+* Dashboard
+* Metric definitions
+* Data lineage
+* Refresh history
+* Version history
+* Access
+* Audit
+
+View 10: Refresh centre
+
+Show how stale data is handled without regenerating the dashboard.
+
+Include two scenarios.
+
+Scenario A: Upload new Excel
+
+Show a drag-and-drop area for:
+
+Credit_Portfolio_August_2026.xlsx
+
+Simulate:
+
+* Schema matched
+* Transformation recipe replayed
+* Metrics recalculated
+* Dashboard layout preserved
+* New snapshot created
+* Version unchanged
+* Data refreshed successfully
+
+Scenario B: Automatic gold-layer refresh
+
+Show a refresh timeline:
+
+* Gold-layer load completed
+* Source quality checks passed
+* Queries executed
+* Metrics reconciled
+* Snapshot generated
+* Dashboard published
+* Subscribers notified
+
+Include one failed refresh example:
+
+“Latest source partition is incomplete. The platform continues displaying the last validated data.”
+
+Show that the dashboard remains available and clearly labelled with the prior data timestamp.
+
+View 11: Dashboard catalogue
+
+Create a marketplace-style internal catalogue.
+
+Include:
+
+* Search
+* Business-domain filters
+* Owner filters
+* Certification filters
+* Freshness filters
+* Sort by most used, newest, recently refreshed, or highest rated
+
+Each dashboard card should show:
+
+* Preview
+* Title
+* Description
+* Owner
+* Certification
+* Freshness
+* View count
+* Last refresh
+* Tags
+* Favourite icon
+* Subscribe action
+
+Include a “Similar dashboards detected” card to demonstrate duplicate-dashboard prevention.
+
+View 12: Governance and audit
+
+Show a complete audit trail:
+
+* Dashboard generated through company chatbot
+* Governed skill version used
+* HTML package received
+* Validation completed
+* AI repair performed
+* Data steward approved metric
+* Gold-layer mapping approved
+* Dashboard published
+* Refresh completed
+* Access granted to user
+* Dashboard version updated
+
+Each audit event should show:
+
+* Timestamp
+* User or service
+* Action
+* Result
+* Related version
+* Details
+
+View 13: Pilot analytics
+
+Show executive pilot metrics:
+
+* Time saved compared with recreating dashboards
+* Reduction in HTML files shared through email
+* Dashboards refreshed automatically
+* Reused certified metrics
+* Average publication time
+* Failed refresh rate
+* Active creators
+* Active viewers
+* Duplicate dashboards avoided
+* Data-lineage coverage
+
+Add charts comparing:
+
+* Old workflow versus Aurora Canvas
+* Manual refresh versus automated refresh
+* Creation effort before and after
+* Dashboard adoption over time
+
+Use believable mock numbers.
+
+Embedded governed HTML inspector
+
+Include an optional technical drawer called “Inspect Governed HTML.”
+
+Show a simplified example of embedded metadata:
+
+<script type="application/json" id="aurora-dashboard-manifest">
+{
+  "contractVersion": "1.0",
+  "dashboardId": "credit-risk-overview",
+  "organizationId": "credit-risk-pilot",
+  "components": [
+    {
+      "id": "total-exposure",
+      "type": "kpi",
+      "metricId": "credit.total-exposure"
+    }
+  ]
+}
+</script>
+
+Also show tabs for:
+
+* Manifest
+* Metrics
+* Transformations
+* Lineage
+* Data bindings
+* Current snapshot
+
+This section is for technical stakeholders but should not overwhelm normal users.
+
+Key interactions
+
+Implement all interactions using JavaScript:
+
+* Switch between sidebar views
+* Simulate chatbot messages
+* Simulate dashboard generation
+* Simulate package transfer
+* Run validation animation
+* Expand validation details
+* Trigger AI repair loop
+* Open metric-lineage drawer
+* Accept data mappings
+* Change refresh option
+* Publish dashboard
+* Copy simulated dashboard link
+* Upload simulated replacement Excel
+* Run simulated refresh
+* Display success and warning toasts
+* Toggle technical details
+* Open modals
+* Filter dashboard catalogue
+* Display audit events
+* Navigate back and forward through the workflow
+
+Prototype storytelling
+
+The prototype must communicate this narrative clearly:
+
+Before Aurora Canvas
+
+* Employee uploads Excel to AI.
+* AI creates a beautiful but static HTML dashboard.
+* Employee shares the file.
+* Data becomes stale.
+* The dashboard must be recreated.
+* There is no ownership, refresh, lineage, governance, or central catalogue.
+
+After Aurora Canvas
+
+* Employee continues using the same approved company chatbot.
+* Governed Dashboard Mode injects a locked skill.
+* The AI produces a compliant, self-contained HTML file.
+* The user publishes directly to Aurora Canvas.
+* Aurora Canvas validates the package.
+* Data logic and lineage are extracted.
+* The dashboard is connected to Excel refresh or the gold layer.
+* The visual design is preserved.
+* The dashboard receives a stable link.
+* Access, ownership, versioning, audit, and certification are applied.
+* Data refreshes without regenerating the dashboard.
+* Users access the latest approved version from a central catalogue.
+
+Important product principles to display
+
+Include these statements within the prototype where appropriate:
+
+* “The AI creates the experience. Aurora Canvas controls the data, execution, security, and lifecycle.”
+* “Preserve the dashboard. Replace the stale data.”
+* “From disposable HTML file to governed enterprise data product.”
+* “The user’s creation workflow barely changes.”
+* “Every displayed number can explain where it came from.”
+* “The LLM proposes. Deterministic services validate and execute.”
+* “The dashboard continues working even when the AI service is unavailable.”
+* “Failed refreshes never overwrite the last validated data.”
+* “One self-contained HTML artifact, two purposes: chatbot preview and governed platform package.”
+
+Technical quality requirements
+
+The generated code must:
+
+* Be delivered as one complete HTML file.
+* Run when opened locally in a browser.
+* Contain no placeholders such as “add chart here.”
+* Contain no incomplete functions.
+* Have no external dependencies.
+* Avoid browser console errors.
+* Use semantic HTML.
+* Include responsive behavior.
+* Include accessible labels.
+* Include keyboard-friendly controls.
+* Use reusable JavaScript functions.
+* Organize mock data clearly.
+* Include comments separating major code sections.
+* Use CSS variables for design tokens.
+* Keep application state in JavaScript.
+* Simulate data loading with short delays.
+* Preserve state when switching views.
+* Render charts using inline SVG or native HTML/CSS.
+* Include a demo reset option.
+
+Final output instruction
+
+Return only the complete runnable HTML document beginning with:
+
+<!DOCTYPE html>
+
+Do not provide explanations, markdown commentary, setup instructions, or separate files.
+
+The result should look like a credible internal product prototype that could be presented to senior management, business users, data governance, engineering, security, and the company AI platform team.
+
+This version is designed for a comprehensive prototype; it can also be shortened into a focused five-screen executive demo prompt.
