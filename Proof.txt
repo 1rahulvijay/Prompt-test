@@ -1,0 +1,560 @@
+Build a high-fidelity, interactive HTML prototype for an enterprise agentic analytics platform called ProofLine AI.
+
+Product concept
+
+ProofLine AI is an autonomous analytics investigation and evidence platform designed for regulated financial institutions.
+
+When a KPI, report or dataset changes unexpectedly, the platform:
+
+* Investigates the movement across source systems and transformations.
+* Distinguishes genuine business movement from data or technology issues.
+* Generates and tests competing root-cause hypotheses.
+* Identifies affected portfolios, reports, controls and stakeholders.
+* Produces an evidence-backed conclusion.
+* Creates technical, management and governance summaries.
+* Requires human approval before remediation or external communication.
+
+This is not a generic chatbot or text-to-SQL interface. It should feel like a serious analytics investigation control centre.
+
+Prototype objective
+
+Demonstrate how an analyst can:
+
+1. See an unexpected KPI movement.
+2. Launch an agentic investigation.
+3. Watch specialised agents analyse the issue.
+4. Review the proposed root cause.
+5. inspect supporting evidence and lineage.
+6. Understand downstream impact.
+7. Approve, challenge or escalate the conclusion.
+8. Generate an executive-ready incident summary.
+
+Use completely synthetic banking data. Do not use real company names, logos, customer information or confidential data.
+
+Technical requirements
+
+Create the prototype as a single, self-contained index.html file.
+
+* Embed all HTML, CSS and JavaScript in the file.
+* Do not require a backend or build process.
+* Use vanilla JavaScript.
+* Use inline SVG for icons and visualisations where practical.
+* Avoid external dependencies unless absolutely necessary.
+* All buttons and interactions must work.
+* Use realistic mock data.
+* Make the application responsive, but optimise it for a 1440px enterprise desktop screen.
+* Persist simple UI state during the session.
+* Add subtle transitions, loading states, tooltips and hover effects.
+* Do not create a static screenshot disguised as an application.
+
+Visual direction
+
+Use a sophisticated enterprise analytics design:
+
+* Dark navy application shell.
+* Slightly lighter navy content surfaces.
+* White and light-grey primary text.
+* Cyan or teal for validated information.
+* Amber for warnings.
+* Red for critical findings.
+* Green for completed validations.
+* Subtle borders, shadows and depth.
+* Limited glassmorphism only for overlays and important cards.
+* Compact but readable typography similar to Inter.
+* Dense information presentation suitable for professional analysts.
+* Avoid excessive gradients, neon effects, oversized cards and generic AI imagery.
+* The product should feel trustworthy, controlled and audit-ready.
+
+Application structure
+
+Create a persistent left navigation containing:
+
+* Overview
+* Investigations
+* Evidence Graph
+* Controls
+* Reports
+* Agent Activity
+* Audit Trail
+* Administration
+
+Include a collapsible sidebar.
+
+The top bar should contain:
+
+* ProofLine AI logo and product name.
+* Current environment: UAT.
+* Reporting date: 13 Aug 2026.
+* Global search field.
+* Data freshness indicator.
+* Notification icon with a badge.
+* User avatar and role: Analytics Control Lead.
+* Light/dark theme toggle.
+
+1. Overview screen
+
+Design an executive operational overview with the following KPI cards:
+
+* 12 active investigations
+* 4 high-severity cases
+* 91% automatically resolved
+* 23 minutes average investigation time
+* 37 downstream reports monitored
+* 98.6% control pass rate
+
+Add an “Analytics Health” section showing:
+
+* Data-quality incidents
+* Unexplained KPI movements
+* Late data feeds
+* Failed reconciliations
+* Reports awaiting approval
+
+Include a trend chart showing investigation volumes and resolution times for the last 30 days.
+
+Add a “Priority Investigations” table with:
+
+* Case ID
+* KPI or report
+* Movement
+* Severity
+* Current hypothesis
+* Confidence
+* Affected reports
+* Status
+* Owner
+* Age
+
+Use at least five realistic synthetic cases.
+
+The highest-priority case should be:
+
+* Case: PLI-2026-0813-017
+* KPI: Wrong Way Risk Exposure
+* Movement: +18.2%
+* Severity: High
+* Status: Evidence review
+* Confidence: 94%
+* Owner: Rahul V.
+* Affected reports: 2
+
+Clicking this case must open the full investigation workspace.
+
+2. Investigation workspace
+
+Make this the most detailed and impressive area of the prototype.
+
+At the top show:
+
+* Case ID
+* Case title
+* Severity
+* Status
+* Assigned owner
+* Creation time
+* Reporting date
+* Overall confidence
+* Last agent activity
+
+Provide buttons for:
+
+* Continue investigation
+* Ask agents to challenge conclusion
+* Assign case
+* Escalate
+* Generate summary
+* Approve conclusion
+* More actions
+
+Include tabs:
+
+* Summary
+* Hypotheses
+* Lineage
+* Reconciliation
+* Impact
+* Evidence
+* Communications
+* Audit History
+
+Summary tab
+
+Display the original alert:
+
+Wrong Way Risk Exposure increased by 18.2% compared with the previous reporting date. The historical expected range is -3.5% to +4.2%.
+
+Break down the movement into:
+
+* Genuine new trading activity: +11.0%
+* Counterparty-sector mapping change: +5.1%
+* Duplicate records introduced during enrichment: +2.1%
+
+Show this breakdown using an interactive waterfall or contribution chart.
+
+Display a prominent conclusion card:
+
+ProofLine AI found that 16.1 percentage points of the movement are explainable. A further 2.1 percentage points result from duplicated records introduced during portfolio enrichment. Two downstream reports are affected and require review.
+
+Include:
+
+* Confidence: 94%
+* Evidence coverage: 17 of 18 required checks
+* Data completeness: 99.8%
+* One unresolved question
+* Human approval required
+
+Add a concise “Recommended actions” panel:
+
+1. Remove duplicate enrichment records.
+2. Rerun the affected aggregation.
+3. Validate two downstream reports.
+4. Notify report owners after approval.
+5. Add a regression control for duplicate trade identifiers.
+
+Investigation timeline
+
+Show a chronological, expandable timeline:
+
+* Anomaly detected
+* Baseline calculated
+* Lineage retrieved
+* Source feeds reconciled
+* Four hypotheses generated
+* Three hypotheses tested
+* Mapping change validated
+* Duplicate join identified
+* Downstream impact calculated
+* Conclusion challenged
+* Evidence package created
+* Awaiting human approval
+
+Each event should show:
+
+* Agent responsible
+* Timestamp
+* Duration
+* Tool used
+* Result
+* Evidence link
+
+3. Agent activity panel
+
+Add a collapsible right-side panel called Agent Workspace.
+
+Show specialised agents as compact status cards:
+
+* Triage Agent
+* Lineage Agent
+* Hypothesis Agent
+* Challenge Agent
+* Reconciliation Agent
+* Impact Agent
+* Evidence Agent
+* Communication Agent
+
+Each card should show:
+
+* Current state: queued, working, complete, waiting or blocked
+* Task description
+* Progress
+* Runtime
+* Number of evidence items produced
+* Confidence where relevant
+
+Include a live activity stream such as:
+
+* “Lineage Agent identified first divergence in counterparty_enrichment_v4.”
+* “Challenge Agent rejected the stale FX-rate hypothesis.”
+* “Impact Agent found two downstream management reports.”
+* “Evidence Agent verified 17 of 18 required controls.”
+
+Provide a “View reasoning trace” action, but display a safe structured summary of observations, tests and results—not hidden chain-of-thought.
+
+4. Hypotheses tab
+
+Create a ranked hypothesis table:
+
+Hypothesis	Initial probability	Final confidence	Status
+Genuine increase from new trades	62%	99%	Validated
+Counterparty mapping change	41%	96%	Validated
+Duplicate enrichment join	27%	98%	Validated
+Stale FX conversion rate	22%	4%	Rejected
+Missing portfolio feed	16%	2%	Rejected
+
+When a hypothesis is selected, show:
+
+* Why it was proposed.
+* Tests executed.
+* Expected result.
+* Actual result.
+* Evidence used.
+* Contradicting evidence.
+* Agent conclusion.
+* Human comments.
+
+Add a button to challenge the selected hypothesis. Clicking it should simulate a short agent run and produce a new challenge result.
+
+5. Lineage tab
+
+Create an interactive horizontal or top-down lineage graph:
+
+1. Trade Capture
+2. Counterparty Master
+3. Sector Mapping
+4. Portfolio Enrichment
+5. WWR Calculation
+6. Risk Aggregation
+7. Management Report
+
+Visually distinguish:
+
+* Healthy nodes in teal.
+* Changed nodes in amber.
+* The first incorrect transformation in red.
+* Downstream affected nodes with red outlines.
+* Validated nodes with checkmarks.
+
+Selecting a node should open a details drawer showing:
+
+* Dataset name
+* System
+* Owner
+* Last refresh
+* Record count
+* Schema changes
+* Applied business rules
+* Upstream and downstream dependencies
+* Related controls
+* Relevant evidence
+
+Highlight Portfolio Enrichment as the first data-quality divergence.
+
+6. Reconciliation tab
+
+Show source-to-report reconciliation results:
+
+* Source record count
+* Enriched record count
+* Distinct trade count
+* Duplicate trade count
+* Exposure total
+* Expected exposure
+* Variance
+* Reconciliation status
+
+Include comparison columns for:
+
+* Previous reporting date
+* Current raw data
+* Current transformed data
+* Corrected result
+
+Add filters for portfolio, legal entity, region, sector and currency.
+
+Display failed controls clearly. Allow users to open a control and inspect:
+
+* Rule definition
+* SQL-style logic
+* Threshold
+* Actual result
+* Pass/fail status
+* Historical performance
+
+7. Impact tab
+
+Show an impact summary containing:
+
+* 3 affected portfolios
+* 2 affected management reports
+* 1 downstream control
+* 4 report owners
+* No regulatory submission released yet
+* Estimated corrected exposure
+
+Include an interactive dependency diagram and an affected-assets table.
+
+Each affected item should show:
+
+* Asset name
+* Asset type
+* Owner
+* Severity
+* Publication status
+* Required action
+* Deadline
+
+Provide stakeholder groups:
+
+* Analytics Operations
+* Risk Reporting
+* Data Management
+* Technology Support
+* Senior Management
+
+Users should be able to select stakeholders for a draft notification, but the prototype must clearly require human approval before sending.
+
+8. Evidence tab
+
+Create an audit-ready evidence register.
+
+Each evidence item should show:
+
+* Evidence ID
+* Description
+* Source
+* Query or control executed
+* Result
+* Timestamp
+* Producing agent
+* Validation status
+* Data classification
+* Evidence hash
+
+Include at least ten realistic evidence items.
+
+Selecting an item should open a detailed evidence drawer. For SQL evidence, show a realistic read-only SQL snippet, execution metadata and a small result preview.
+
+Clearly label evidence as:
+
+* Verified
+* Partially verified
+* Rejected
+* Awaiting review
+
+Add an evidence-coverage visual showing 17 of 18 required items complete.
+
+9. Communications tab
+
+Generate three versions of the case summary:
+
+* Executive summary
+* Technical incident report
+* Governance and audit summary
+
+Allow switching between formats.
+
+The executive version should be brief and business-focused.
+
+The technical version should include affected transformations, failed controls and recommended remediation.
+
+The governance version should contain evidence references, approvals, materiality assessment and an audit record.
+
+Include actions to:
+
+* Copy summary
+* Download evidence pack
+* Export as PDF
+* Request review
+* Submit for approval
+
+These actions should provide visible prototype feedback.
+
+10. Approval workflow
+
+When “Approve conclusion” is clicked, open a professional approval modal.
+
+Require the user to review:
+
+* Root cause
+* Impact
+* Evidence coverage
+* Unresolved questions
+* Recommended remediation
+* Communication recipients
+
+Provide three decisions:
+
+* Approve conclusion
+* Return for further investigation
+* Escalate to control owner
+
+Require a comment before completing the action.
+
+After approval, update the status and timeline without reloading the page.
+
+11. Evidence Graph screen
+
+Create an enterprise-wide searchable graph showing relationships among:
+
+* Source systems
+* Tables and columns
+* Transformations
+* Business rules
+* KPIs
+* Controls
+* Reports
+* Owners
+
+Include filters for asset type, system, owner, criticality and status.
+
+Clicking an item should show its complete upstream and downstream relationship chain.
+
+12. Audit Trail screen
+
+Create an immutable-looking audit log showing:
+
+* User actions
+* Agent actions
+* Queries executed
+* Evidence created
+* Status changes
+* Approvals
+* Export events
+
+Include filters for case, actor, action type and date.
+
+Every log entry should contain an event ID, timestamp and integrity status.
+
+Interactions to implement
+
+At minimum, make these interactions functional:
+
+* Navigation between all screens.
+* Opening the priority investigation.
+* Switching investigation tabs.
+* Expanding timeline events.
+* Opening lineage-node details.
+* Selecting and reviewing hypotheses.
+* Running a challenge simulation.
+* Filtering reconciliation results.
+* Opening evidence details.
+* Collapsing the Agent Workspace.
+* Generating different communication summaries.
+* Completing an approval decision.
+* Displaying toast notifications.
+* Switching themes.
+* Collapsing the navigation.
+* Searching or filtering tables.
+* Export and download buttons showing realistic confirmation states.
+
+Prototype behaviour
+
+Use short simulated loading sequences to demonstrate agent work:
+
+1. “Retrieving approved lineage…”
+2. “Generating competing hypotheses…”
+3. “Running deterministic controls…”
+4. “Challenging proposed conclusion…”
+5. “Calculating downstream impact…”
+6. “Building evidence package…”
+
+Do not make the animation excessively slow. Each sequence should finish within a few seconds.
+
+Important product principles
+
+Communicate these principles throughout the interface:
+
+* Evidence before explanation.
+* Deterministic validation before AI conclusions.
+* Read-only investigation by default.
+* Least-privilege access.
+* No production remediation without approval.
+* No unsupported claims.
+* Complete auditability.
+* Clear separation between confirmed facts, hypotheses and unresolved questions.
+
+Final output
+
+Return the complete working index.html.
+
+The prototype should be visually polished enough to demonstrate to senior analytics, risk, data-governance and technology stakeholders. Prioritise the investigation workspace, evidence traceability and human-approval workflow over decorative elements.
